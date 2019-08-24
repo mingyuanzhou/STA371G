@@ -1,0 +1,1178 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1.25in]{geometry}
+\usepackage{color}
+\usepackage{ifpdf}
+%\usepackage[a4paper,top=3cm,left=3cm,right=3cm,bottom=3cm]{geometry}
+%\usepackage{fullpage}
+\pagestyle{plain}
+\setcounter{page}{1}
+%\pagenumbering{roman}
+
+\ifpdf
+  \usepackage[pdftex]{hyperref}
+\else
+  \usepackage[hypertex]{hyperref}
+\fi
+%\textwidth=7in
+%\textheight=9.5in
+%\topmargin=-1in
+%\headheight=0in
+%\headsep=.5in
+%\hoffset  -.85in
+
+\definecolor{UTAustin}{RGB}{204,85,0}
+
+%\pagestyle{empty}
+
+%\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\begin{document}
+
+\begin{center}
+{\bf \Large   STA 371G Outline\vspace{1mm}\\ \large{Fall 2019} %\ Sec. 12  \ \ MWF 8:00 - 9:00 AM,  Room:  BOYD 314  
+}
+\end{center}
+
+\setlength{\unitlength}{1in}
+
+%\begin{picture}(6,.1) 
+%\put(0,0) {\line(1,0){6.25}}         
+%\end{picture}
+
+ 
+
+\renewcommand{\arraystretch}{2}
+
+\vskip.25in
+\noindent\textbf{\large  Instructor:} Mingyuan Zhou, Ph.D., Associate Professor of Statistics
+
+Office: CBA 6.458
+
+Phone:  512-232-6763
+
+Email: \href{mailto:mingyuan.zhou@mccombs.utexas.edu}{\texttt{mingyuan.zhou@mccombs.utexas.edu}}
+
+
+Website: \href{http://mingyuanzhou.github.io/}{\textcolor[rgb]{0.00,0.00,1.00}{http://mingyuanzhou.github.io/}}
+
+
+Office Hours: Monday \& Wednesday 3:30-4:30 PM. 
+You are welcome to come by my office at other times. %, but to make sure that I will be there then, you may first call my office, send me an email, or talk to me before or after class to make an appointment.
+
+%. You can make an appointment simply by talking to me before or after class, by calling me at my office or at home, or by sending e-mail
+
+
+
+
+		
+
+%\vskip.25in
+%\noindent\textbf {\large Class Outline:}
+%\vspace{2mm}
+
+\vspace{5mm}
+\noindent\textbf{\large Wednesday, August 28} 
+
+\vspace{2mm}
+\noindent\textbf{Topics:}
+\begin{itemize}
+\item Introduction
+\item Probability
+\item Random variables
+\item Probability distributions
+
+%\item Add a constant to a random variable
+%\item Multiply a random variable by a constant
+%\item Conditional, joint and marginal probabilities
+%\item Independent random variables
+%\item Sum of independent random variables
+%\item If we have time, we will also discuss 
+%\begin{itemize}
+%\item Bayes rule
+%%\item Probability and decision
+%\item Simpson's paradox
+%\end{itemize}
+
+\end{itemize}
+
+
+
+\noindent\textbf{Reading Assignments:}
+
+You are recommended to read:
+
+Chapter 1 of OpenIntro Statistics, 3rd edition\\
+
+%
+%		
+%
+
+	\vspace{5mm}
+\noindent\textbf{\large Wednesday, September 4} 
+
+\vspace{2mm}
+\noindent\textbf{Topics:}
+\begin{itemize}
+%\item Probability distributions
+%\item Mean, variance and standard deviation of a random variable
+\item Mean, variance and standard deviation of a random variable
+
+\item Add a constant to a random variable
+\item Multiply a random variable by a constant
+
+\item Independent random variables,  sum of independent random variables
+%\item Continuous random variables
+%%\item Normal distribution $X\sim\mathcal{N}(\mu,\sigma^2)$
+%\item Probability density function: area under the curve represents probability
+%\item Standard normal distribution $Z\sim\mathcal{N}(0,1)$
+%\item Standard normal calculations in Excel: NORMSDIST, \\ or in R: pnorm  (type ``?pnorm'' in R for help).
+
+\end{itemize}
+
+
+\noindent\textbf{Reading Assignments:}
+
+If you are not familiar with the topics discussed in class, you are recommended to read:
+
+pp. 140-142, 740-741 %
+%(the counterpart of 189-193 of 4th edition was not found, the counterpart of 193-195 of 4th edition is 740-741) of 
+Business Analytics: Business Analytics: Data analysis and decision making, 6th edition
+
+or 
+
+pp. 156-168, 189-195,  of Data analysis and decision making, 4th edition
+
+or 
+
+pp. 196-206, 225-231 of  Data analysis and decision making, 3rd edition\\
+
+You are also recommended to read:
+
+pp. 1-14 of ``1TopicSummary\_ProbabilityConceptsAndNormalDistributions.pdf'' (available in Canvas/files) \\
+
+To learn more about these topics, you may further read:
+
+Chapters 2.1, 2.2, 2.4, and 2.5 of OpenIntro Statistics, 3rd edition
+%
+%		
+
+		
+\vspace{7mm}
+%
+
+
+%\item Common problems in Homework 1
+
+	\vspace{5mm}
+\noindent\textbf{\large Monday, September 9} 
+
+
+
+\begin{itemize}
+%\item Model selection
+%\item Frequency probability and subjective probability
+
+%\item Slides 6.1 pages 1-16, Slides 6.2 pages 1-21
+\item Measure uncertainty with probability
+
+\item Frequency probability and subjective probability
+\item Probability, lotteries and betting odds
+\item Payoff tables
+\item Payoffs and Losses
+\item Nonprobabilistic criteria for decision making: maximin, maximax, and minimax loss
+%\item Example: Liquor consumptions 
+%\item Review for Midterm Exam \#2
+\end{itemize}
+
+
+%\color{blue}
+\vspace{5mm}
+\noindent\textbf{\large  Wednesday, September 11} 	
+
+
+
+\begin{itemize}
+%\item Slides 6.2 pages 22-end, Slides 6.1 pages 17-end, Slides 1.1 pages 26-35
+
+\item Probabilistic criteria for decision making: expected payoff, expected loss
+%\item Utility functions
+
+\item Utility functions
+
+\item Conditional probability and conditional bets or conditional reference contracts
+\item Conditional, joint and marginal probabilities
+\item Bayes' theorem
+
+
+
+%\item Expected value of perfect information (EVPI)
+%\item The value of information
+%\item Expected value of sample information (EVSI)
+%\item Example: Liquor consumptions 
+\end{itemize}
+\noindent\textbf{Reading Assignments:}
+
+Chapter 6 of Business Analytics: Data analysis and decision making, 6th edition
+
+or 
+
+Chapter 6 of Data analysis and decision making, 4th edition
+
+or 
+
+Chapter 7 of  Data analysis and decision making, 3rd edition\\
+
+
+%\color{blue}
+
+\vspace{5mm}
+\noindent\textbf{\large Monday, September 16} 	
+
+%\noindent\textbf{\large Wednesday, November 29} 
+\begin{itemize}
+%\item Simpson's paradox
+%\item Slides 6.3 pages 1-14, Slides 6.4 pages 1-14 
+\item Decision trees, risk profile, sensitivity analysis
+\item Risk profile, sensitivity analysis
+%\item Introduction to simulation
+%\item Expected value of sample information (EVSI)
+%\item Example: Liquor consumptions 
+\end{itemize}
+\noindent\textbf{Reading Assignments:}
+
+Chapter 6 of Business Analytics: Data analysis and decision making, 6th edition
+
+or
+
+Chapter 6 of Data analysis and decision making, 4th edition
+
+or 
+
+Chapter 7 of  Data analysis and decision making, 3rd edition\\
+
+
+
+\vspace{5mm}
+\noindent\textbf{\large Wednesday, September 18} 	
+
+%\noindent\textbf{\large Monday, December 4} 		
+\begin{itemize}
+\item The value of information
+\item Expected value of perfect information (EVPI)
+\item Expected value of sample information (EVSI)
+
+\item Expected value of sample information (EVSI)
+
+\item Case study: Freemark Abbey Winery
+
+
+\end{itemize}
+
+
+%\newpage
+\noindent\textbf{\large Monday, September 23} 	
+
+\begin{itemize}
+
+%\item Conditional, joint and marginal probabilities
+%\item Independent random variables,  sum of independent random variables
+%\item Mean, variance and standard deviation of a random variable
+
+%\item Add a constant to a random variable
+%\item Multiply a random variable by a constant
+
+%\item Conditional, joint and marginal probabilities
+%\item Independent random variables,  sum of independent random variables
+
+
+%\end{itemize}
+
+
+
+
+
+	
+%\vspace{5mm}
+%\noindent\textbf{\large Monday, January 30} 	
+
+%\begin{itemize}
+
+%\item  Conditional, joint and marginal probabilities
+%\item Independent random variables,  sum of independent random variables
+
+
+
+
+%\end{itemize}
+%
+%
+%
+%
+%
+%	
+%
+
+	
+
+%\vspace{5mm}
+%\noindent\textbf{\large Tuesday, January 28} 	
+%
+%Class cancelled due to adverse weather conditions. 
+%\newpage
+%\vspace{5mm}
+%\noindent\textbf{\large Wednesday, February 1} 	
+%\color{blue}
+%\begin{itemize}
+
+
+\item Continuous random variables
+%\item Normal distribution $X\sim\mathcal{N}(\mu,\sigma^2)$
+\item Probability density function: area under the curve represents probability
+\item Standard normal distribution $Z\sim\mathcal{N}(0,1)$
+
+
+\item Normal distribution $X\sim\mathcal{N}(\mu,\sigma^2)$
+
+
+
+
+\end{itemize}
+
+
+
+\noindent\textbf{Reading Assignments:}
+
+To get familiar with the normal distribution, you are recommended to read:
+
+pp. 167-171, 174-182 of Business Analytics: Data analysis and decision making, 6th edition
+
+or
+
+pp. 211-215, 217-225 of Data analysis and decision making, 4th edition
+
+or 
+
+pp. 247-250, 253-260 of  Data analysis and decision making, 3rd edition\\
+
+You are also recommended to read:
+
+pp. 15-30 of ``1TopicSummary\_ProbabilityConceptsAndNormalDistributions.pdf'' (available in Canvas/files) \\
+
+
+You may further read:
+
+Chapters 3.1.1, 3.1.2, 3.1.4 and 3.1.5 of OpenIntro Statistics, 3rd edition %\\
+
+%To learn the binomial distribution and its  normal approximation, please read:
+%
+%pp. 233-239 of Data analysis and decision making, 4th edition
+%
+%or 
+%
+%pp. 268-273 of  Data analysis and decision making, 3rd edition\\
+%
+%You may further read:
+%
+%Chapters 3.4.1 and 3.4.2 of OpenIntro Statistics, 2nd edition
+
+
+
+
+\noindent\textbf{\large Wednesday, September 25} 	
+
+\begin{itemize}
+
+\item If $X\sim\mathcal{N}(\mu,\sigma^2)$, then $P(X<x)=P(\frac{X-u}{\sigma}<\frac{x-u}{\sigma}) =P(Z<\frac{x-u}{\sigma})$.
+
+
+
+\item Standard normal calculations in Excel: NORMSDIST, \\ or in R: pnorm  (type ``?pnorm'' in R for help).
+%\item Normal distribution $X\sim\mathcal{N}(\mu,\sigma^2)$
+
+\item Understand the meaning of the standard deviation $\sigma$ in a normal distribution: $P(\mu-\sigma<X<\mu+\sigma)=?$ and $P(\mu-2\sigma<X<\mu+2\sigma)=?$
+%\item Standardizing a normal random variable $Z=\frac{X-\mu}{\sigma}$\\
+%Interpretation: the value of $Z$ is the number of standard deviations that $X$ deviates towards  the left (if $Z<0$) or the right (if $Z>0$) of the mean.
+\item Normal calculations in Excel: \\
+NORMSDIST, NORMDIST\\
+NORMSINV, NORMINV\\ 
+or in R: \\
+pnorm,  qnorm (type ``?pnorm'' and ``?qnorm'' in R for help).
+\item Standardizing a normal random variable $Z=\frac{X-\mu}{\sigma}\sim\mathcal{N}(0,1)$\\
+Interpretation: the value of $Z$ is the number of standard deviations that $X$ deviates towards  the left (if $Z<0$) or the right (if $Z>0$) of the mean.
+
+
+\item Plot a normal distribution in Excel and R
+%\item Normal calculations in Excel: \\
+%NORMSDIST, NORMDIST\\
+%NORMSINV, NORMINV\\ 
+%or in R: \\
+%pnorm,  qnorm (type ``?pnorm'' and ``?qnorm'' in R for help).
+
+\end{itemize}
+
+
+%\end{document}
+
+\vspace{5mm}
+\noindent\textbf{\large Monday, September 30} 	
+
+\begin{itemize}
+
+\item Example: Testing at ZTel, we will make an Excel spreadsheet for calculations
+%\item If we have time, we will also discuss 
+%\begin{itemize}
+%\item Binomial distribution
+%\item The normal approximation to the binomial
+%\end{itemize}
+
+
+\item Case study, Texas BBA Salary Statistics
+%\item Conditional, joint and marginal probabilities
+\item Expectation of a continuous random variable
+%\item Binomial distribution and its normal approximation
+
+\item Population mean, variance, standard deviation
+\item Sample mean, sample variance, standard error of the sample mean
+\item Sampling distribution of the sample mean
+%\item Central limit theorem
+%\item $t$ distribution (optional)
+%\item Confidence interval
+%\item Case study, Texas BBA Salary Statistics
+%\item Case study: A national poll of 803 adults by Anzalone Liszt Grove Research
+%\item Introduction to Monte Carlo simulation
+%\item Uniform random variables: RAND() in Excel, runif in R
+%\item Flip a coin, toss a die, repeat 1 million times
+%\item Law of Large Numbers
+%\item Sum of two dice 
+%\item Example: simulation of market return (using Excel)
+
+
+%\item Sampling distribution of the sample mean
+%\item Central limit theorem
+%\item $t$ distribution (optional)
+%\item Confidence interval
+%\item Introduction to linear regression
+
+
+%\item Case study: A national poll of 803 adults by Anzalone Liszt Grove Research
+%\item Introduction to Monte Carlo simulation
+%\item Uniform random variables: RAND() in Excel, runif in R
+%\item Flip a coin, toss a die, repeat 1 million times
+%\item Law of Large Numbers
+%\item Sum of two dice 
+%\item Example: simulation of market return (using Excel)
+\end{itemize}
+
+
+\noindent\textbf{Reading Assignments:}
+
+
+%Lecture notes 3 and 4 posted in Canvas/files\\
+
+To learn more about estimation and sampling distribution, please read:
+
+pp. 280-281, 292-297, 299, 312-318 of Business Analytics: Data analysis and decision making, 6th edition
+
+or 
+
+pp. 352-353, 366-371, 374, 388-395 of Data analysis and decision making, 4th edition
+
+or 
+
+pp. 378-379, 393-398, 400-401, 422-430 of  Data analysis and decision making, 3rd edition\\
+
+
+You are also recommended to read:
+
+``2TopicSummary\_EstimationAndSamplingDistributions.pdf'' (available in Canvas/files) \\
+
+
+For this topic, you may further read:
+
+%Chapters 4.1, 4.2, 4.4 and 5.1 of OpenIntro Statistics, 2nd edition
+Chapters 4.1, 4.2, 4.4 and 5.3 of OpenIntro Statistics, 3rd edition
+
+
+
+
+%\vspace{5mm}
+%\noindent\textbf{\large Wednesday, February 8} 	
+%
+%\begin{itemize}
+%
+%
+%\item Binomial distribution and its normal approximation
+%
+%\item Case study: Texas BBA Demographics
+%\item Binomial distribution $X\sim\mbox{Binomial}(n,p)$. Examples: the number of ``Heads'' in 100 coin flips, the number of votes for Republican in 1000 voters
+%\item The normal approximation to the binomial $X\sim\mathcal{N}\left(np,np(1-p)\right)$
+%\item Important concepts: Population and Sample
+%\item Sampling distribution of a sample proportion 
+%\item Case study: A national poll of 803 adults by Anzalone Liszt Grove Research
+%%\item Introduction to Monte Carlo simulation
+%%\item Uniform random variables: RAND() in Excel, runif in R
+%%\item Flip a coin, toss a die, repeat 1 million times
+%%\item Law of Large Numbers
+%%\item Sum of two dice 
+%%\item Example: simulation of market return (using Excel)
+%
+%\end{itemize}
+%
+%
+%\noindent\textbf{Reading Assignments:}
+%
+%Lecture notes 3 and 4 posted on the course website.\\
+%
+%To learn more about the binomial distribution, its  normal approximation, and the sampling distribution of a sample proportion, please read:
+%
+%pp. 233-239, 403-404 of Data analysis and decision making, 4th edition
+%
+%or 
+%
+%pp. 268-273, 438-439 of  Data analysis and decision making, 3rd edition\\
+%
+%For this topic, you may further read:
+%
+%Chapters 3.4.1, 3.4.2 and 6.1 of OpenIntro Statistics, 3rd edition
+
+
+
+\vspace{5mm}
+%\noindent\textbf{\large Monday, December 4} 	
+\noindent\textbf{\large Wednesday, October 2} 
+%\noindent\textbf{\large Wednesday, December 6} 
+\begin{itemize}
+\item Please install R and Rstudio on your laptop and bring it to class
+\item Simulation using Excel and R
+\item Simulate random numbers from a discrete distribution
+\item Find the sample mean and  variance, compare them with the true mean and variance
+\item Simulate the sampling distribution of the sample mean 
+\item Uniform random numbers, flip a coin, toss a die, flip two coins, toss two dice, law of large numbers
+\item Estimate $\pi$ with Monte Carlo simulation
+\item Simulate normal random numbers $X\sim\mathcal{N}(\mu,\sigma^2)$. 
+\item Find $P(X<x)$ and $P(X<?)=p$ using simulation
+\item Demonstrate Central Limit Theorem using simulation
+\item Simulation of weekly demand
+
+\end{itemize}
+\noindent\textbf{Reading Assignments:}
+
+Chapters 4.4 (4.5-4.7 not found), pp 740-741 of Business Analytics: Data analysis and decision making, 6th edition
+
+or 
+
+Chapters 4.4--4.8 of Data analysis and decision making, 4th edition
+
+or 
+
+Chapters 5.4--5.8  of  Data analysis and decision making, 3rd edition\\
+
+\end{document}
+	
+\vspace{5mm}
+\noindent\textbf{\large Monday, October 7} 	
+
+\begin{itemize}
+
+\item Sampling distribution of the sample mean
+
+\item Confidence interval
+
+
+\item Simple linear regression
+\item Linear prediction: $Y=b_0+b_1 X$
+
+%if you are using Mac, please install StatPlus:mac LE (available at \href{http://www.analystsoft.com/en/products/statplusmacle/}{http://www.analystsoft.com/en/products/statplusmacle/}); if you are using windows, please install Analysis ToolPak or Decision Tools Standard 6.1 
+
+%(available at \href{http://www.mccombs.utexas.edu/tech/computer-services/coe#DecisionTools}{http://www.mccombs.utexas.edu/tech/computer-services/coe\#DecisionTools}).
+
+
+%\item Case study: A national poll of 803 adults by Anzalone Liszt Grove Research
+%\item Introduction to Monte Carlo simulation
+%\item Uniform random variables: RAND() in Excel, runif in R
+%\item Flip a coin, toss a die, repeat 1 million times
+%\item Law of Large Numbers
+%\item Sum of two dice 
+%\item Example: simulation of market return (using Excel)
+\end{itemize}
+
+\noindent\textbf{Reading Assignments:}
+
+Chapters 7.1 and 7.2 of OpenIntro Statistics, 3rd edition
+
+%Lecture notes 3 and 4 posted in Canvas/files\\
+
+%To learn more about Least Squares Estimation, please read:
+
+pp. 418-441 of Business Analytics: Data analysis and decision making, 6th edition
+
+or
+
+pp. 531-551 of Data analysis and decision making, 4th edition
+
+or 
+
+pp. 562-584 of  Data analysis and decision making, 3rd edition\\
+
+
+\vspace{5mm}
+\noindent\textbf{\large Wednesday, October 9}	
+
+\begin{itemize}
+\item Least squares estimation of $b_0$ and $b_1$
+\item Examples: predict house price, baseball runs per game
+\item Using Excel and R to do the calculation
+\item Excel add-in: 
+ \href{https://wikis.utexas.edu/display/MSBTech/Palisade+Decision+Tools}{\textcolor[rgb]{0.00,0.00,1.00}{Palisade Decision Tools (including StatTools)}}  for Windows,  \href{https://www.analystsoft.com/en/products/statplusmacle/}{\textcolor[rgb]{0.00,0.00,1.00}{StatPlus:mac LE}} for Mac.
+
+\item Sample mean, variance, and standard deviation
+\item Sample covariance, sample correlation
+
+\end{itemize}
+
+
+
+\noindent\textbf{Reading Assignments:}
+
+PDF ``Simple Linear Regression'' posted in Canvas/files\\
+
+
+
+
+
+\vspace{5mm}
+\noindent\textbf{\large Monday, October 14} 	
+
+\begin{itemize}
+
+\item Linear relationship between $X$ and $Y$
+\item $b_0=\bar{y}-b_1\bar{x}$, $b_1=r_{xy}\times \frac{s_y}{s_x}$
+
+
+\item mean($e$)=0,~Corr($e,X$)=0, Corr($e,\hat{Y}$)=0, Corr($\hat{Y},X$)=1
+\item SST, SSR, SSE
+\item Coefficient of determination: $R^2 = \frac{SSR}{SST} = 1 - \frac{SSE}{SST}$
+\item $R^2=r_{xy}^2$ measures the proportion of variation in $Y$ explained by $X$.
+
+%\item Sampling distribution of Least Squares Estimates
+%\item Case study: A national poll of 803 adults by Anzalone Liszt Grove Research
+%\item Introduction to Monte Carlo simulation
+%\item Uniform random variables: RAND() in Excel, runif in R
+%\item Flip a coin, toss a die, repeat 1 million times
+%\item Law of Large Numbers
+%\item Sum of two dice 
+%\item Example: simulation of market return (using Excel)
+
+\item Statistical model for simple linear regression
+\item Statistical model for simple linear regression:\\
+$Y=\beta_0+\beta_1 X +\epsilon,~\epsilon\sim\mathcal{N}(0,\sigma^2)$\\
+$Y\sim\mathcal{N}(\beta_0+\beta_1X,\sigma^2)$
+\item Conditional distribution of $Y$ given $X$
+
+\item 95\% prediction interval of $Y$ given $X$: $ \beta_0+\beta_1X \pm 2\sigma$
+
+%\item Conditional and marginal distributions of  $Y$
+%\item Interpretation of $\epsilon$ and $\sigma$
+%\item The error terms $\epsilon_i$  are independent, and identically distributed 
+%\item Least squares estimation and Gaussian maximum likelihood (optional)
+%\item True line $\beta_0+\beta_1X$ and least squares line $b_0+b_1 X$
+%\item Case study: A national poll of 803 adults by Anzalone Liszt Grove Research
+%\item Introduction to Monte Carlo simulation
+%\item Uniform random variables: RAND() in Excel, runif in R
+%\item Flip a coin, toss a die, repeat 1 million times
+%\item Law of Large Numbers
+%\item Sum of two dice 
+%\item Example: simulation of market return (using Excel)
+\end{itemize}
+%
+%
+
+
+\noindent\textbf{Reading Assignments:}
+
+ ``3TopicSummary\_RegressionModelAndEstimation.pdf'' (available in Canvas/files)
+	
+	``5TopicSummary\_CorrelationAndCovariance.pdf'' (available in Canvas/files)
+	
+	``6TopicSummary\_ComputingAndInterpretingRSquare.pdf'' (available in Canvas/files)
+	
+	``7TopicSummary\_InterpretingAndEstimatingVarianceOfEpsilon.pdf'' (available in Canvas/files)
+
+
+\vspace{5mm}
+\noindent\textbf{\large Wednesday, October 16} 	
+
+\begin{itemize}
+
+\item Conditional and marginal distributions of  $Y$
+\item Interpretation of $\epsilon$ and $\sigma$
+\item The error terms $\epsilon_i$  are independent, and identically distributed 
+\item Least squares estimation and Gaussian maximum likelihood (optional)
+\item True line $\beta_0+\beta_1X$ and least squares line $b_0+b_1 X$
+
+\item Case study: A stock's beta coefficient
+
+\end{itemize}
+
+
+%
+%
+
+\vspace{5mm}
+\noindent\textbf{\large Monday, October 21} 	
+
+
+\begin{itemize}
+\item Midterm Exam,  6:45-9:45 pm
+\end{itemize}
+
+\vspace{5mm}
+\noindent\textbf{\large Wednesday, October 23} 	
+
+
+\begin{itemize}
+\item Case study: Milk and Money
+\item Degrees of freedom
+\item In SLR,   $\sigma^2$ is estimated with $s^2=\frac{\sum_{i=1}^n e_i^2}{n-2}=\frac{SSE}{n-2}$. 
+\item SLR regression standard error: $s=\sqrt{SSE/(n-2)}$
+
+\item Sampling distributions of regression parameters
+\item Confidence intervals of regression parameters
+%\item Hypothesis testing in SLR: $t$-statistic and $p$-value
+
+%\item Sampling distributions of regression parameters
+%\item Confidence intervals of regression parameters
+
+%\item Forecasting with linear regression models
+%\item Multiple regression
+%\item Example: Auto MPG data 
+\end{itemize}
+
+
+
+%
+%\newpage
+%\vspace{5mm}
+\noindent\textbf{\large Monday, October 28} 	
+
+
+
+
+\begin{itemize}
+%\item Forecasting with linear regression models
+\item Hypothesis testing in SLR: $t$-statistic and $p$-value
+
+%\item Discuss Practice Exam \#1
+%\item Common problems in homework assignments
+%\item Topic summary for Midterm \#1
+
+
+\end{itemize}
+
+
+%\end{document}
+\vspace{5mm}
+\noindent\textbf{\large Wednesday, October 30} 	
+
+
+
+\begin{itemize}
+
+\item Multiple regression
+%\item Example: Auto MPG data 
+\item T-test 
+%\item Example: Supervisor performance data
+%\item Understanding multiple regression
+\item Examples: Auto MPG, Baseball
+\end{itemize}
+%\newpage
+
+
+
+\vspace{5mm}
+\noindent\textbf{\large Monday, November 4} 	
+%
+
+
+
+
+
+
+\begin{itemize}
+\item Example: Supervisor performance data
+\item F-test
+\item Understanding multiple regression
+\item Correlation and causation
+
+\end{itemize}
+
+%
+\vspace{7mm}
+\noindent\textbf{\large Wednesday, November 6} 	
+
+
+\begin{itemize}
+\item Multicollinearity
+\item Example: Number of beer and weight \& height 
+
+%\item Multicollinearity
+
+\end{itemize}
+%\
+
+\vspace{5mm}
+\noindent\textbf{\large Monday, November 11} 	
+
+
+\begin{itemize}
+
+\item Dummy variables and interactions
+\item Example: Gender Discrimination in Salary at Fifth National Bank
+\item Case study: Orion Bus Industries---Contract Bidding Strategy
+
+
+
+\end{itemize}
+
+\noindent\textbf{Reading Assignments:}
+
+Chapters 10, 11.1-11.5, and 11.7-11.10 of Business Analytics: Data analysis and decision making, 6th edition
+
+or 
+
+Chapters 10, 11.1-11.5, and 11.8-11.11 of Data analysis and decision making, 4th edition
+
+or 
+
+Chapters 11, 12.1-12.5, and 12.8-12.11 of  Data analysis and decision making, 3rd edition\\
+
+ ``4TopicSummary\_NonlinearRelationships.pdf	'' (available in Canvas/files)
+
+%\end{document}
+
+\vspace{5mm}
+\noindent\textbf{\large Wednesday, November 13} 	
+
+\begin{itemize}
+
+\item Example: MidCity House Price
+\item Diagnostics %and transformations
+\item Polynomial regression
+
+
+%\item Moving average models
+\end{itemize}
+
+\noindent\textbf{Reading Assignments:}
+
+ ``9TopicSummary\_MeasuringTheQualityOfTheEstimateOfBeta.pdf'' (available in Canvas/files)
+ 
+ ``10TopicSummary\_HypothesisTestingInRegression.pdf'' (available in Canvas/files)
+
+
+
+%\newpage
+
+\vspace{5mm}
+
+\noindent\textbf{\large Monday, November 18} 	
+
+%\noindent\textbf{\large Monday, October 30} 
+		
+\begin{itemize}
+\item Slides 3.3 pages 25-46
+\item Variable interaction
+\item Log transformation
+%\item Outliers
+%\item Discuss Homework Assignment 6 % (due next Thursday)
+\item Case Study, Oakland A's (A)
+\item Case Study, Oakland A's (B)
+
+\item Slides 4.1, Slides 4.2 pages 1-15
+%\item Moving average models
+\item Time series: fitting a trend
+
+\item Autocorrelation
+\item Time series regression, Hotel Occupancy Case
+%\item Random walk models
+
+%\item Autoregressive models
+
+
+%\item Example: Liquor consumptions 
+\end{itemize}
+
+\noindent\textbf{Reading Assignments:}
+
+Chapter 12 of Business Analytics: Data analysis and decision making, 6th edition
+
+or 
+
+Chapter 12 of Data analysis and decision making, 4th edition
+
+or 
+
+Chapter 13 of  Data analysis and decision making, 3rd edition\\
+
+
+
+
+%\color{blue}
+\vspace{5mm}
+%\noindent\textbf{\large Wednesday, November 1} 	
+\noindent\textbf{\large Wednesday, November 20} 
+
+\begin{itemize}
+\item  Slides 4.2 pages 16-end, Slides 4.3 pages 1-15
+
+\item Random walk models
+
+\item Autoregressive models
+\item Example: Monthly stock closing prices
+%\item Example: Age of death of successive kings of England
+\item Example: Daily/Monthly temperature
+\item Example: Monthly Boston Armed Robberies Jan.1966-Oct.1975
+
+\item Seasonal models
+\item Example: Fisher river daily temperatures 
+
+
+%\item Model selection
+%\item Example: Liquor consumptions 
+\end{itemize}
+
+
+\noindent\textbf{Reading Assignments:}
+
+ ``8TopicSummary\_ForecastingModelForSPSSSales.pdf'' (available in Canvas/files)
+ 
+
+
+\vspace{5mm}
+%\noindent\textbf{\large Monday, November 6} 	
+\noindent\textbf{\large Monday, November 25} 	
+
+
+\begin{itemize}
+\item Slides 4.3 pages 16-end
+\item Example: Monthly airline passengers
+\item Case study: Northern Napa Valley Winery, Inc.
+\item Example: Monthly liquor sales
+
+%\item Review for Midterm Exam \#2
+%\item Example: Liquor consumptions 
+\end{itemize}
+	
+
+\vspace{5mm}
+%\noindent\textbf{\large Wednesday, November 8} 
+\noindent\textbf{\large Wednesday, November 27}	
+\begin{itemize}
+\item 
+Thanksgiving holidays 
+\end{itemize}
+\vspace{5mm}
+
+\noindent\textbf{\large Monday, December 2}
+\begin{itemize}
+\item %Slides 3.3 page 47-end, 
+Slides 5, Slides 6.1 pages 1-3
+\item Outliers
+\item Moving averages, exponential smoothing and ARMA
+\item Hypothesis testing: Type I Error, Type II Error, significant level, and power
+\item Understanding prediction errors in linear regression
+\item Model selection
+%\item Measure uncertainty with probability
+%\item Frequency probability and subjective probability
+%\item Probability, lotteries and betting odds
+%\item Payoff tables
+%\item Example: Liquor consumptions 
+
+
+\end{itemize}
+
+
+
+
+
+
+\vspace{5mm}
+
+
+\noindent\textbf{\large Wednesday, December 4} 
+\begin{itemize}
+\item Simulation and decision
+\item Multivariate distributions, covariance and correlation
+\item Sum of correlated random variables 
+\item Simulate portfolio return
+\item Sample from a finite population (with/without replacement)
+\item Simulate binomial random variables
+\item Simulate student t random variables
+\item Simulate a random walk model
+\item Simulate an AR+Trend model
+\item Simulate prediction intervals for an AR model
+\end{itemize}
+
+
+
+
+%\begin{itemize}
+%\item Logistic regression
+%\end{itemize}
+
+\vspace{5mm}
+%\noindent\textbf{\large Wednesday, December 6} 	
+\noindent\textbf{\large Monday, December 9 (Last class of the semester)} 	
+%\noindent\textbf{\large Monday, December 11} 	
+%%\item Simulation
+% %\item Logistic regression
+% \begin{itemize}
+%\item Review for the Final Exam
+%\end{itemize}
+
+
+\begin{itemize}
+\item Practice questions for the final exam
+\end{itemize}
+%\noindent\textbf{\large Tuesday, May 9} 	
+%\begin{itemize}
+%\item Logistic regression
+%\item Review for the Final Exam
+%\end{itemize}
+
+\vspace{5mm}
+%\noindent\textbf{\large Final Exam} 	
+%\begin{itemize}
+%\item Final Exam: %GEA 105, Friday, 12/15/2017, 7:00-10:00 pm %WCH 1.120, 7:00-10:00 PM, Friday, 05/12/2017
+%%\item Makeup Final Exam: %BEN 1.104, 9:00-11:59 am, Monday, 05/15/2017
+%\end{itemize}
+
+
+
+%
+%\vspace{5mm}
+%\noindent\textbf{\large Final Exam} 	
+%\begin{itemize}
+%%\item Final Exam
+%\item Date \& Time:	THURSDAY, MAY 08, 7-10 PM
+%\item Location:	 JGB 2.324
+%%\item Make-Up Exam
+%%\item Date \& Time:	FRIDAY, MAY 09, 7-10 PM
+%%\item Location:	 SZB 296
+%\end{itemize}
+%
+%
+%Chapters 7.1 and 7.2 of OpenIntro Statistics, 2nd edition
+%
+%%Lecture notes 3 and 4 posted in Canvas/files\\
+%
+%%To learn more about Least Squares Estimation, please read:
+%
+%pp. 531-544 of Data analysis and decision making, 4th edition
+%
+%or 
+%
+%pp. 562-577 of  Data analysis and decision making, 3rd edition\\
+
+
+
+%For this topic, you may further read:
+
+%Chapters 4.1, 4.2, 4.4 and 5.3 of OpenIntro Statistics, 2nd edition
+
+%Jan 16, Normal and binomial distributions
+%
+%\vspace{2mm}
+%\noindent\textbf{Week 2} 
+%
+%Jan 23, Introduction to Monte Carlo simulation
+%
+%Jan 21, Estimation and sampling distributions
+%
+%
+%
+%\vspace{2mm}\noindent\textbf{Week 3}
+%
+%	Jan 28, Simple linear regression: least squares estimation
+%	
+%	Jan 30, Simple linear regression: covariance and correlation, goodness of fit
+%	
+%\vspace{2mm}\noindent\textbf{Week 4}
+%
+%	Feb 04, Simple linear regression: model assumptions
+%	
+%	 Feb 06, Sampling distributions for regression parameters
+%
+%\vspace{2mm}\noindent\textbf{Week 5}
+%
+%	Feb 11, Confidence intervals for regression parameters
+%	
+%	Feb 13, Hypothesis testing for regression models
+%	
+%\vspace{2mm}\noindent\textbf{Week 6} 
+%
+%	Feb 18, Simulation with R and Excel, Case Study
+%	
+%	{\color{blue} Feb 20, Review for Midterm Exam 1}
+%	
+%\vspace{2mm}\noindent\textbf{Week 7} 
+%
+%	{\color{UTAustin} Feb 25, Midterm Exam 1}
+%	
+%	Feb 27, Multiple regression
+%	
+%\vspace{2mm}\noindent\textbf{Week 8}
+%
+%	Mar 04, Multiple regression
+%	
+%	Mar 06, Dummy variables and interactions
+%	
+%\vspace{2mm}\noindent\textbf{Week 9}
+%
+%	Mar 11, Diagnostics and transformations
+%	
+%	Mar 13, Diagnostics and transformations
+%
+%\vspace{2mm}\noindent\textbf{Week 10}
+%
+%	Mar 25, Time series
+%	
+%	Mar 27,  Time series
+%	
+%	
+%\vspace{2mm}\noindent\textbf{Week 11} 
+%
+%	Apr 01,  Simulation, Case Study 
+%	
+%	{\color{blue} Apr 03, Review for Midterm Exam 2}
+%	
+%	\noindent\textbf{Week 12}
+%	
+%		{\color{UTAustin} Apr 08, Midterm Exam 2}
+%		
+%	Apr 10, Decision making
+%
+%
+%	
+%\vspace{2mm}\noindent\textbf{Week 13}  
+%
+%	Apr 15, Decision making
+%	
+%	Apr 17, Decision making
+%	
+%\vspace{2mm}\noindent\textbf{Week 14}   
+%
+%	Apr 22, Bayes rule and naive Bayes classifier
+%	
+%	Apr 24, Simulation, Case Study
+%	
+%\vspace{2mm}\noindent\textbf{Week 15}   
+%	
+%	Apr 29, Simulation, Case Study
+%	
+%	{\color{blue} May 01, Review for Final Exam}
+	
+
+
+
+
+\end{document}

@@ -1,0 +1,725 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1.25in]{geometry}
+\usepackage{color}
+\usepackage{ifpdf}
+%\usepackage[a4paper,top=3cm,left=3cm,right=3cm,bottom=3cm]{geometry}
+%\usepackage{fullpage}
+
+\ifpdf
+  \usepackage[pdftex]{hyperref}
+\else
+  \usepackage[hypertex]{hyperref}
+\fi
+%\textwidth=7in
+%\textheight=9.5in
+%\topmargin=-1in
+%\headheight=0in
+%\headsep=.5in
+%\hoffset  -.85in
+
+\definecolor{UTAustin}{RGB}{204,85,0}
+
+\pagestyle{empty}
+
+%\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\begin{document}
+
+\begin{center}
+{\bf \Large STA 371G: Statistics and Modeling\vspace{1mm}\\ \large{Fall 2019} \\
+\small{\vspace{.3cm}
+Session 1, 04510,
+\ \ Monday \& Wednesday 12:30 - 2:00  PM,\ \   Room:  UTC 4.134 \\
+Session 2, 04520,
+\ \ Monday \& Wednesday  \, 2:00 - 3:30 PM,\ \  Room:  UTC 4.134  \\
+%Session 3, 04540,
+%\ \ Tuesday \& Thursday   \ 3:30 - 5:00 PM,\ \   Room:  UTC  1.144  \\
+}
+}
+\end{center}
+
+\setlength{\unitlength}{1in}
+
+%\begin{picture}(6,.1) 
+%\put(0,0) {\line(1,0){6.25}}         
+%\end{picture}
+
+ 
+
+\renewcommand{\arraystretch}{2}
+
+\vskip.25in
+\noindent\textbf{\large  Instructor:} Mingyuan Zhou, Ph.D., Associate Professor of Statistics
+
+Office: CBA 6.458 (east side of the building that faces the entrance of Gregory Gym)
+
+Phone:  512-232-6763
+
+
+Email: \href{mailto:mingyuan.zhou@mccombs.utexas.edu}{\texttt{mingyuan.zhou@mccombs.utexas.edu}}
+
+Website: \href{http://mingyuanzhou.github.io/}{\textcolor[rgb]{0.00,0.00,1.00}{http://mingyuanzhou.github.io/}}
+
+
+
+%
+Office Hours: Monday \& Wednesday 3:30-4:30 PM
+
+You are welcome to come by my office at other times. To make sure that I will be there then, you may first call my office or send me an email. %, or talk to me before or after class to make an appointment.
+
+\vskip.18in
+\noindent\textbf{\large  Teaching Assistants:} 	
+
+			%\href{mailto:zhangquan@utexas.edu}{\texttt{zhangquan@utexas.edu}}
+Quan Zhang, \href{mailto:quan.zhang@mccombs.utexas.edu}{\texttt{quan.zhang@mccombs.utexas.edu}},  IROM PhD Student
+
+Office Hours: Tuesday 1:00-2:30 PM, CBA 4.304A % (TA Space TBD)
+
+
+
+\vskip.18in
+\noindent\textbf{\large  Course Website:}  \href{http://mingyuanzhou.github.io/STA371G/}{\textcolor[rgb]{0.00,0.00,1.00}{http://mingyuanzhou.github.io/STA371G/}}
+
+
+
+%\vskip.25in
+%\noindent\textbf{Prerequisites:}\footnotemark
+%A list of prerequisites.
+%
+
+%\footnotetext{Footnote text goes here.}
+
+%\vspace*{.15in}
+
+
+%The weekly coverage might change as it depends on the progress of the class.  However, you must keep up with the reading assignments.
+
+
+%\vspace*{.15in}
+%\noindent\textbf{Grade Policy:} In this space you can add your grading policy.
+
+
+\vskip.18in
+\noindent \textbf{\large  Course Description}: This course introduces statistical methods and data analysis tools to model uncertainty  in business decisions. After a brief review of basic probability and statistics, we will discuss decision making, regression models, and time series analysis. Simulation with statistical software will be incorporated into these topics and used throughout the semester. The introduced statistical models will be illustrated with a large number of real examples, such as those in finance, marketing, economics, politics, and sports. Analyzing real datasets with R and Excel will be demonstrated in class. %, and the code and datasets used for demonstration will be posted on the course website.  
+The techniques taught in the course will also be useful in performing data analysis in other BBA courses.
+
+
+By the end of the course, you will be equipped with the necessary statistical  knowledge and skills to solve real-world business problems. Specifically,  you will learn how to choose an appropriate statistical model to analyze business data, perform computation with statistical software, validate the output of the model, and draw appropriate conclusions. 
+%
+% build statistical models to analyze real business data. 
+%
+%build models to solve real-world business problems. This involves choosing the appropriate model, performing the correct analysis, validating the model, and drawing the appropriate conclusions.
+%
+%% classroom and assigned as homework. 
+%
+%%Real datasets will be analyzed with statistical software during classes.  
+%
+%Regression analysis is one of the most widely used methods in business analytics. It helps determine the relationships between variables and using these relationships to forecast future observations. You will learn how to apply a regression model to real-world data using R and Excel, test the validity of the model with the available data, draw inferences from the model, and summarize the uncertainty of the inferences. 
+%
+%We will learn how to use statistical software to analyze real data. 
+%
+%Emphasis will be placed on the analysis of real datasets.
+%
+%Simulation using R and Excel will be used throughout 
+%
+%The focus of this course is on learning how to manage uncertainty in business decisions through the use of quantitative models. The topics covered include regression models, time series forecasting models, decision analysis and simulation, with a strong emphasis on how to apply these techniques to real-world problems that arise in business. The techniques taught in the course will also be useful in performing analysis in other BBA courses.
+%
+%Regression analysis is one of the most powerful methods in statistics. It is particularly useful for determining the relationships between variables and using these relationships to forecast future observations. You will learn how to apply a regression model to real-world data using R and Excel, test the validity of the model with the available data, draw inferences from the model, and summarize the uncertainty of the inferences. 
+%
+%Time series forecasting models are used to forecast future observations of time series data. An example of time series data is the monthly sales of a company. The fundamental idea of time series forecasting models is to use the pattern in the past history of the data (which might include trend, seasonal and/or cyclical components) to forecast future observations. These models also provide a valuable method for quantifying the uncertainty associated with the forecasts.
+%
+%Decision analysis is a framework that enables you to make decisions that are consistent with an objective in the face of uncertainty. This framework provides a method to evaluate alternatives and to determine the value of acquiring various types of information. 
+%
+%Simulation is a computation-based procedure for quantifying the impact of multiple interacting sources of uncertainty on an outcome of interest. Understanding the distribution of the possible outcomes allows both for a better understanding of the risk involved in a particular project as well as the identification of the inputs that are most influential in the project?s value.
+%
+%By the end of the course, you will be able to build models to solve real-world business problems. This involves choosing the appropriate model, performing the correct analysis, validating the model, and drawing the appropriate conclusions.
+
+\vskip.25in
+\noindent\textbf{\large  Materials:}  
+
+\begin{itemize}
+\item Text:  
+%\begin{itemize}
+
+
+(a) Data Analysis and Decision Making with Microsoft Excel by Albright, Winston and Zappe, 3rd/4th edition, or Business Analytics: Data Analysis and Decision making by Albright and Winston, 6th edition. It covers most of the topics  of this course. A UT customized version is available at a lower price.       It is recommended but not required. 
+
+(b) OpenIntro Statistics by Diez, Barr and \c{C}etinkaya-Rundel, 3rd Edition, available for free at \href{https://www.openintro.org/stat/textbook.php?stat_book=os}{\textcolor[rgb]{0.00,0.00,1.00}{http://www.openintro.org/stat/textbook.php}}. %This book will be used as a reference book in the beginning of the semester to help us
+This book provides a
+ review of basic probability and statistics.  It is recommended but not required.
+	%\end{itemize}
+(c) Data Science: A Gentle Introduction by James G. Scott, available for free at \href{https://jgscott.github.io/STA371H_Spring2018/files/DataScience.pdf}{\textcolor[rgb]{0.00,0.00,1.00}{https://jgscott.github.io/STA371H\_Spring2018/files/DataScience.pdf}}
+
+(d) Course packet available at University Coop. It contains the cases to be studied in this course. One course packet for each group would usually be sufficient. %Analyzing these cases will be assigned as homework exercises and discussed in class. 
+
+%(d) STA371G class notes by Prof. Tom Shively, available in Canvas/files. 
+	
+	
+\item Software:  
+
+   %\begin{itemize}
+  % \item 
+(a) 
+ \href{https://cran.rstudio.com/}{\textcolor[rgb]{0.00,0.00,1.00}{
+R}} and  \href{https://www.rstudio.com/products/rstudio/download/}{\textcolor[rgb]{0.00,0.00,1.00}{
+RStudio}}  (free software). Learning basic operations with R is highly recommended, though not required. I will use R for class demonstrations and post the R code on the course website.  Running these R code by yourself will help you better understand randomness and uncertainty, and practice your data analysis skills. %You are encouraged to learn how to code in R, which could not only benefit your learning for this course, but also other classes requiring qualitative skills. 
+You are free to use any other software, such as Matlab, Python, and SAS. %You are encouraged to learn R, 
+		
+  
+   %\item 
+(b) Excel, 
+ \href{https://wikis.utexas.edu/display/MSBTech/Palisade+Decision+Tools}{\textcolor[rgb]{0.00,0.00,1.00}{Palisade Decision Tools (including StatTools)}} for Windows,  \href{https://www.analystsoft.com/en/products/statplusmacle/}{\textcolor[rgb]{0.00,0.00,1.00}{StatPlus:mac LE}} for Mac.
+   %\item 
+%(c) Excel Add-ins Precision Tree and @Risk, available for download at http://www.mccombs.utexas.edu/Tech/Computer-Services/COE.aspx  ? Click on Decision Tools Standard 6.1 near the bottom of the page.
+   	%\end{itemize}
+   \end{itemize}
+
+\vskip.25in
+\noindent\textbf{\large  Grading:}
+
+Homework  (15\%)
+
+In Class Quizzes (7\%) 
+
+Midterm Exam (36\%)
+
+%Midterm Exam 2  (23\%)
+
+Final Exam  (42\%)
+
+\vskip.25in
+\noindent\textbf{\large  Makeup Exam/Homework/Quiz}:
+Any students missing exams/homework assignments/quizzes are required to register their situation with UT's Student Emergency Services (SES). The approval from SES is required for requesting makeup exams/assignments/quizzes. 
+For the midterm exam, a proof of a class conflict or other reasonable academic conflict is required for requesting a makeup exam.
+Your lowest quiz score will be dropped. 
+
+\vskip.25in
+\noindent\textbf{\large  Homework}:  You will receive a total of around eight homework assignments throughout the semester. While you may join a group of no more than three members to complete homework assignments, each member of the group needs to turn in his/her own report and write done the names of all group members. For each homework, a selected subset of questions will be graded based on correctness, while the remaining ones will be graded based on completeness. 
+
+%Each group only need to turn in one report. 
+%Although you can 
+%discuss the homework problems with each other, everyone is required to hand in 
+%a set of solutions that are prepared alone. %The homework will be graded on a pass/fail basis. 
+%You will receive the full score for each question that you have provided reasonable answers, even if your answers differ from my solutions. 
+%\vskip.25in
+%\noindent\textbf{\large  Case Study}:
+ 
+For class discussions and homework assignments, we will study the following eight business cases: 
+\begin{enumerate}
+\item Amore Frozen Food, UVA-QA-0317
+\item Waite First Securities, UVA-QA-0453
+\item Milk and Money, KEL343
+\item Orion Bus Industries: Contract bidding strategy, IVEY 9B03E005
+\item Oakland A's A, UVA-QA-0282
+\item Oakland A's B, UVA-QA-0283
+\item Northern Napa Valley Winery, Inc, IVEY 9A98E046
+\item Freemark Abbey, Harvard 9-181-027
+\end{enumerate}
+%You may %either 
+%purchase these cases individually online. % or purchase the course packet that contains all the eight cases.  
+%One course packet for each group would usually be sufficient. 
+%You are encouraged to form groups to complete homework assignments that contain  case studies. Each group may consist of no more than three members. Each group only need to turn in one report.  
+
+%if you tried and provide reasonable answers based on whether each problem is reasonably answered.  %Each assignment will be graded on a pass/fail basis.
+
+%\vskip.25in
+%noindent\textbf{\large  Class Handouts:}
+%You are responsible for bringing the relevant section of the lecture notes to every lecture. 
+%All course materials are available on the web.
+%\newpage
+\vskip.25in
+\noindent\textbf{\large  Exams:}
+\begin{itemize}
+\item The midterm Exam  will be on Monday, October 21 (Location TBD, 6:45-9:45 pm). 
+%\vspace{-2.5mm}
+%\item Midterm Exam 2 will be on Wednesday, November 14 (GSB 2.124, 6:45-9:00 pm).
+%\vspace{-2.5mm}
+%\item Both midterm exams will be 
+The midterm exam is held in the evening to reduce exam stress. 
+\vspace{-2.5mm}\item The final exam will cover all materials except for ``Decision Making Under Uncertainty." %is cumulative and covers basic probability and statistics, linear regression, time series, decision making, and simulation. 
+It will be given during the University's final exam period. The specific date is determined by the University.
+%\vspace{-2.5mm}\item 
+If the final exam score is higher than your midterm score, your midterm score will be modified with 
+
+\quad Modified Midterm Score =  (Current Midterm Score + Final Exam Score) /2
+%Your first midterm exam score could be replaced by the second midterm exam score or the final exam score, whichever is higher.
+%Your second midterm exam score could be replaced by the final exam score if it is lower than the final exam score. 
+%if it is lower than either of them. 
+%You lowest midterm exam score will be replaced by the other midterm exam score or the final exam score, whichever is higher. %If you miss one or two midterm exams, the weights of the missed exams will be added to the final exam.
+\vspace{-2.5mm}\item Clerical errors will be corrected without hassle. All regrading requests must be 
+submitted in writing within one week (7 days) of the exam's return. %Keep in mind that the 
+%entire exam will be subject to regrading.
+\vspace{-2.5mm}\item You may bring three single-sided pages of notes (8.5$\times$11 inch, letter size) to the midterm exam, and six single-sided pages to the final.
+%  first midterm, second midterm, and final exams, respectively. % exam, and two pages to the final exam.
+\vspace{-2.5mm}\item You may bring a calculator to both the midterm and final exams. 
+\vspace{-2.5mm} \item There is no predetermined grade distribution for this class. The recommended average GPA for this course is between 3.0 and 3.2. 
+\vspace{-2.5mm} \item I reserve the right to curve the grades of both the midterm and final exams. 
+%Historically, the final average GPA is fairly close to 3.2. %However, the faculty at 
+%McCombs has recommended a GPA of 3.33 0.05. Historically, this course has been 
+%fairly close to the recommended GPA, but we reserve the right to deviate
+
+\end{itemize}
+%
+%\vskip.25in
+%\noindent\textbf{\large  Important Dates}:
+%\begin{center} \begin{minipage}{5in}
+%\begin{flushleft}
+%%Drop Deadline \dotfill Month Day\\
+%%Add Deadline \dotfill Month Day\\
+%Review for Exam 1 \dotfill February 20\\
+%Exam 1 \dotfill February 25\\
+%Review for Exam 2 \dotfill April 3\\
+%Exam 2  \dotfill April 8\\
+%Review for Final Exam \dotfill May 1\\
+%Final Exam \dotfill TBA\\
+%%Project Deadline \dotfill Month Day\\
+%%Course Final \dotfill Month Day\\
+%\end{flushleft}
+%\end{minipage}
+%\end{center}
+
+%\newpage
+\vskip.2in
+\noindent\textbf {\large Tentative Course Schedule:}
+\vspace{2mm}
+
+\noindent This schedule represents my current plans and objectives.  As we go through the semester, those plans may need to change to enhance the class learning opportunity.  Such changes, communicated clearly, are not unusual and should be expected.
+
+A more detailed \href{http://mingyuanzhou.github.io/STA371G/notes/outline_STA371G_2019.pdf}{\textcolor[rgb]{0.00,0.00,1.00}{Course  Outline}} in the course website will be updated on a regular basis.
+
+\vspace{2mm}
+\noindent\textbf{Week 1} 
+
+Aug 28, Introduction, random variables and probability distributions
+	
+
+
+\vspace{2mm}
+\noindent\textbf{Week 2} 
+
+Sept 2, Labor Day holiday (No Classes)
+
+Sept 4, Random variables and probability distributions 
+
+
+%Jan 23, Introduction to Monte Carlo simulation
+
+
+
+\vspace{2mm}\noindent\textbf{Week 3}
+
+Sept 9, Decision making (probability, payoff tables, non-probabilistic decision criteria)
+%Normal and binomial distributions 
+
+Sept 11, Decision making (probabilistic decision criteria, utility, Bayes' theorem)
+%Estimation and sampling distributions
+	
+		
+\vspace{2mm}\noindent\textbf{Week 4}
+
+Sept 16, Decision making (decision trees)
+%	
+
+Sept 18, Decision making (value of information)
+%
+
+	\newpage
+\vspace{2mm}\noindent\textbf{Week 5}
+
+	Sept 23,  Normal distributions 
+	%
+
+	Sept 25, Normal distributions, estimation and sampling distributions
+	%
+	
+		
+\vspace{2mm}\noindent\textbf{Week 6} 
+
+Sept 30, Estimation and sampling distributions
+% %Simulation with R and Excel, Case Study
+
+	Oct 2, %Covariance and correlation
+	Introduction to Simulation
+	%
+	
+	
+	
+	
+		
+\vspace{2mm}\noindent\textbf{Week 7} 
+
+
+{ Oct 7, Simple linear regression: least squares estimation}
+%Multiple regression, \color{blue}Review for Midterm Exam 1} %, Discuss Practice Exam 1}
+
+Oct 9, Simple linear regression: covariance and correlation
+%Multiple regression
+
+%	{\color{UTAustin} Oct 10,
+%	
+%	% Midterm Exam 1 (UTC 2.102A, 6:45-9:00 pm)
+%	}
+
+	
+	
+\vspace{2mm}\noindent\textbf{Week 8}
+
+Oct 14, 
+Simple linear regression: interpretation of model ouput
+%Multiple regression
+
+	
+	Oct 16, Model assumptions for linear regression
+	%Dummy variables and interactions
+	
+	
+\vspace{2mm}\noindent\textbf{Week 9}
+
+{\color{UTAustin}
+	Oct 21, Midterm Exam, 6:45 - 9:45 pm, Location TBD
+	%Diagnostics and transformations
+}
+
+	Oct 23, Sampling distributions for regression parameters
+		%Diagnostics and transformations
+	
+		
+\vspace{2mm}\noindent\textbf{Week 10}
+
+		
+	Oct 28,  Multiple regression
+	%Time series%, logistic regression
+	
+	Oct 30, Multiple regression
+	%Time series
+
+\vspace{2mm}\noindent\textbf{Week 11}
+
+	
+	
+	Nov 4,  Multiple regression % Model selection %, Simulation, Case Study 
+	
+	Nov 6, Multiple regression
+	%  Decision making
+	
+\vspace{2mm}\noindent\textbf{Week 12} 
+
+	
+	{ Nov 11, Dummy variables and interactions } % Decision making, \color{blue} Review for Midterm Exam 2} %, Discuss Practice Exam 2}
+	
+	Nov 13, Diagnostics and transformations %Decision making
+	
+	%{\color{UTAustin} Nov 14, Midterm Exam 2 (GSB 2.124, 6:45-9:00 pm)}
+		
+	\noindent\textbf{Week 13}
+	
+		
+		Nov 18, Diagnostics and transformations
+	
+	Nov 20, Time Series Analysis
+
+
+
+	
+\vspace{2mm}\noindent\textbf{Week 14}  
+
+	Nov 25, Time Series Analysis
+	
+	Nov 27, Thanksgiving Holidays
+		
+\vspace{2mm}\noindent\textbf{Week 15}   
+
+	Dec 2,  Model Selection
+	
+	Dec 4,  Simulation, Case Study
+% and naive Bayes classifier Simulation, Case Study
+	
+\vspace{2mm}\noindent\textbf{Week 16}   
+	
+	Dec 9, Practice questions for the final exam
+	
+	%{\color{blue} Dec 13, Review %and Discuss Practice Questions 
+	%for the Final Exam}
+	
+
+\vskip.25in
+\noindent\textbf{\large  Office Hours}:  Don't hesitate to come to my office at CBA 6.458 during office hours  (Monday \&  Wednesday 5:00-6:00 PM) to discuss  homework problems or any other aspects of the course. Please feel free to come by my office at other times, but to make sure that I will be there then, you may first call my office, send me an email, or talk to me before or after class to make an appointment.
+ %or by appointment  
+%. 
+
+\vskip.25in
+\noindent\textbf{\large Quantitative Reasoning Flag:} 
+This course carries the Quantitative Reasoning flag. Quantitative Reasoning courses are designed to equip you with skills that are necessary for understanding the types of quantitative arguments you will regularly encounter in your adult and professional life. You should therefore expect a substantial portion of your grade to come from your use of quantitative skills to analyze real-world problems.
+
+
+
+%\newpage
+\vskip.25in
+\noindent\textbf{\large University of Texas Honor Code:} The core values of The University of Texas at Austin are learning, discovery, freedom, leadership, individual opportunity, and responsibility. Each member of the university is expected to uphold these values through integrity, honesty, trust, fairness, and respect toward peers and community.
+
+
+	%The text below is an EXAMPLE of what else you might include in this section.
+
+\vskip.25in
+\noindent\textbf{\large Academic Integrity:}
+Each student in this course is expected to abide by the University of Texas Honor Code.  Any work submitted by a student in this course for academic credit will be the student's own work. 
+
+You are encouraged to study together and to discuss information and concepts covered in lecture and the sections with other students. You can give ``consulting'' help to or receive ``consulting'' help from such students.  However, this permissible cooperation should never involve one student having possession of a copy of all or part of work done by someone else, in the form of an e-mail, an e-mail attachment file, a diskette, or a hard copy. 
+
+Should copying occur, both the student who copied work from another student and the student who gave material to be copied will both automatically receive a zero for the assignment. Penalty for violation of this Code can also be extended to include failure of the course and University disciplinary action. 
+
+During examinations, you must do your own work. Talking or discussion is not permitted during the examinations, nor may you compare papers, copy from others, or collaborate in any way. Any collaborative behavior during the examinations will result in failure of the exam, and may lead to failure of the course and University disciplinary action.
+
+
+
+\vskip.25in
+\noindent\textbf{\large Students with Disabilities:}
+Students with disabilities may request appropriate academic accommodations from the Division of Diversity and Community Engagement, Services for Students with Disabilities, 512-471-6259, http://www.utexas.edu/diversity/ddce/ssd/.
+
+\vskip.25in
+\noindent\textbf{\large Religious Holy Days:}  
+By UT Austin policy, you must notify me of your pending absence at least fourteen days prior to the date of observance of a religious holy day.  If you must miss a class, an examination, a work assignment, or a project in order to observe a religious holy day, you will be given an opportunity to complete the missed work within a reasonable time after the absence.
+
+
+\vskip.25in
+\noindent\textbf{\large Policy on Scholastic Dishonesty:}
+The McCombs School of Business has no tolerance for acts of scholastic dishonesty.  The responsibilities of both students and faculty with regard to scholastic dishonesty are described in detail in the BBA Program's Statement on Scholastic Dishonesty at http://www.mccombs.utexas.edu/BBA/Code-of-Ethics.aspx.  By teaching this course, I have agreed to observe all faculty responsibilities described in that document. By enrolling in this class, you have agreed to observe all student responsibilities described in that document.  If the application of the Statement on Scholastic Dishonesty to this class or its assignments is unclear in any way, it is your responsibility to ask me for clarification.  Students who violate University rules on scholastic dishonesty are subject to disciplinary penalties, including the possibility of failure in the course and/or dismissal from the University.  Since dishonesty harms the individual, all students, the integrity of the University, and the value of our academic brand, policies on scholastic dishonesty will be strictly enforced.  You should refer to the Student Judicial Services website at http://deanofstudents.utexas.edu/sjs/ to access the official University policies and procedures on scholastic dishonesty as well as further elaboration on what constitutes scholastic dishonesty.
+
+
+\vskip.25in
+\noindent\textbf{\large Campus Safety:}
+Please note the following recommendations regarding emergency evacuation, provided by the Office of Campus Safety and Security, 512-471-5767,
+
+\noindent http://www.utexas.edu/safety:
+\begin{itemize}
+\item Occupants of buildings on The University of Texas at Austin campus are required to evacuate buildings when a fire alarm is activated. Alarm activation or announcement requires exiting and assembling outside.
+\item Familiarize yourself with all exit doors of each classroom and building you may occupy. Remember that the nearest exit door may not be the one you used when entering the building.
+\item Students requiring assistance in evacuation should inform the instructor in writing during the first week of class.
+\item In the event of an evacuation, follow the instruction of faculty or class instructors.
+\item Do not re-enter a building unless given instructions by the following: Austin Fire
+Department, The University of Texas at Austin Police Department, or Fire Prevention
+Services office.
+\item Behavior Concerns Advice Line (BCAL): 512-232-5050
+\item Further information regarding emergency evacuation routes and emergency procedures can
+be found at: http://www.utexas.edu/emergency.
+\end{itemize}
+
+
+\vskip.25in
+\noindent\textbf{Notification from McCombs Regarding BBA Recruiting Conflicts:}
+
+Conflicts occasionally arise between classes and the search for employment. We understand how
+important the job search process is to you, and McCombs provides many resources in support of career
+exploration and search. However, UT is first and foremost an educational institution and your BBA
+degree will be the credential that certifies your education. As such, education will take precedent
+whenever such a conflict arises.
+
+All companies that recruit at McCombs are informed of this fact. Should a conflict arise, we recommend
+the following steps:
+\begin{itemize}
+\item Check the syllabus to see if an exception is provided that would allow you to satisfy class
+obligations while still attending the job event (e.g., paper instead of quiz, allowed quiz drops,
+etc).
+\item Note that a job-related conflict, whether a current job or a potential one, is usually not an
+acceptable reason for missing an exam or taking a make-up, and may not be acceptable in other
+circumstances either. If any doubt exists, check with your professor.
+\item If no exception is provided, inform the company that an academic conflict exists and request an
+accommodation.
+\item If no accommodation is provided by the company, and you have done everything within your
+power to resolve the situation, contact BBA Career Services and request their assistance in
+resolving the situation.
+\end{itemize}
+
+Note that while we do have influence with the companies that recruit at McCombs, not all conflicts can
+be resolved and we have little or no influence with companies that do not recruit through the Recruit
+McCombs system.
+
+Finally, be aware that it is not unreasonable for an employer to expect you to go to some lengths to
+show your interest in them. In a recent example, several students completed an exam at 9 pm and were
+expected to attend an on-site interview in Houston the next morning at 8 am. A 5:30 am flight from
+Austin was available and the students were expected to be on it. This is reasonable, and such sacrifices
+are sometimes expected in a good job and career in business.
+
+
+%
+%\noindent\textbf{\large Emergency Evacuation Policy:}
+%Occupants of buildings on the UT Austin campus are required to evacuate and assemble outside when a fire alarm is activated or an announcement is made.  Please be aware of the following policies regarding evacuation:
+%\begin{itemize}
+%\item	Familiarize yourself with all exit doors of the classroom and the building. Remember that the nearest exit door may not be the one you used when you entered the building.
+%\item	If you require assistance to evacuate, inform me in writing during the first week of class.
+%\item	In the event of an evacuation, follow my instructions or those of class instructors.
+%\end{itemize}
+%Do not re-enter a building unless you're given instructions by the Austin Fire Department, the UT Austin Police Department, or the Fire Prevention Services office.
+
+
+
+%
+%Please note the following recommendations regarding emergency evacuation from the Office of Campus Safety and Security, 512-471-5767, http://www.utexas.edu/safety:
+%\begin{itemize}
+%\item Occupants of buildings on The University of Texas at Austin campus are required to evacuate buildings when a fire alarm is activated. Alarm activation or announcement requires exiting and assembling outside.
+%\item Familiarize yourself with all exit doors of each classroom and building you may occupy. Remember that the nearest exit door may not be the one you used when entering the building.
+%\item Students requiring assistance in evacuation should inform the instructor in writing during the first week of class.
+%\item In the event of an evacuation, follow the instruction of faculty or class instructors.
+%\item Do not re-enter a building unless given instructions by the following: Austin Fire Department,
+%The University of Texas at Austin Police Department, or Fire Prevention Services office.
+%\item Behavior Concerns Advice Line (BCAL): 512-232-5050
+%\end{itemize}
+%Further information regarding emergency evacuation routes and emergency procedures can be found at: http://www.utexas.edu/emergency.
+%
+%\vskip.25in
+%\noindent\textbf{University Attendance Policy}:  http://bulletin.uga.edu/bulletin/ind/attendance.html: 
+%Students are expected to attend classes regularly. A student who incurs an excessive
+%number of absences may be withdrawn from a class at the discretion of the professor.
+%
+%\begin{table} [h!]
+%%\normalsize % The size of the table text can be changed depending on content. Remove if desired.
+%\begin{tabular}{ | c | c | }
+%\hline
+%\textbf{Week} & \textbf{Content} \\
+%\hline
+%Week 1  & \begin{minipage}{.85\textwidth}
+%%\begin{itemize} \itemsep-0.4em
+%	\vspace{1mm}
+%	Jan 14, Random variables and probability distributions\\
+%	Jan 16, Normal and binomial distributions
+%	\vspace{1mm}
+%%\end{itemize}
+%\end{minipage} \\
+%\hline
+%Week 2 & \begin{minipage}{.85\textwidth}
+%%\begin{itemize} \itemsep-0.4em
+%	\vspace{1mm}
+%	Jan 21, Estimation and sampling distributions\\
+%	Jan 23, Basic simulation with R and Excel
+%	\vspace{1mm}
+%%\end{itemize}
+%\end{minipage} \\
+%\hline
+%Week 3 & \begin{minipage}{.85\textwidth}
+%%\begin{itemize} \itemsep-0.4em
+%	\vspace{1mm}
+%	Jan 28, Simple linear regression: least squares estimation\\
+%	Jan 30, Simple linear regression: covariance and correlation, goodness of fit
+%	\vspace{1mm}
+%%\end{itemize}
+%\end{minipage} \\
+%\hline
+%Week 4 & \begin{minipage}{.85\textwidth}
+%%\begin{itemize} \itemsep-0.4em
+%	\vspace{1mm}
+%	Feb 04, Simple linear regression: model assumptions\\
+%	 Feb 06, Sampling distributions and confidence intervals for regression parameters
+%	\vspace{1mm}
+%%\end{itemize}
+%\end{minipage} \\
+%\hline
+%Week 5 & \begin{minipage}{.85\textwidth}
+%%\begin{itemize} \itemsep-0.4em
+%	\vspace{1mm}
+%	Feb 11, Sampling distributions and confidence intervals for regression parameters\\
+%	Feb 13, Forecasting using a regression model
+%	\vspace{1mm}
+%%\end{itemize}
+%\end{minipage} \\
+%\hline
+%Week 6 & \begin{minipage}{.85\textwidth}
+%%\begin{itemize} \itemsep-0.4em
+%	\vspace{1mm}
+%	Feb 18, Simulation with R and Excel, Case Study\\
+%	{\color{blue} Feb 20, Review for Exam 1}
+%	\vspace{1mm}
+%%\end{itemize}
+%\end{minipage} \\
+%\hline
+%Week 7 & \begin{minipage}{.85\textwidth}
+%%\begin{itemize} \itemsep-0.4em
+%	\vspace{1mm}
+%	{\color{UTAustin} Feb 25, Exam 1}\\
+%	Feb 27, Multiple regression
+%	\vspace{1mm}
+%%\end{itemize}
+%\end{minipage} \\
+%\hline
+%Week 8 & \begin{minipage}{.85\textwidth}
+%%\begin{itemize} \itemsep-0.4em
+%	\vspace{1mm}
+%	Mar 04, Multiple regression\\
+%	Mar 06, Dummy variables and interactions
+%	\vspace{1mm}
+%%\end{itemize}
+%\end{minipage} \\
+%\hline
+%Week 9 & \begin{minipage}{.85\textwidth}
+%%\begin{itemize} \itemsep-0.4em
+%	\vspace{1mm}
+%	Mar 11, Diagnostics and transformations\\
+%	Mar 13, Diagnostics and transformations
+%	\vspace{1mm}
+%%\end{itemize}
+%\end{minipage} \\
+%\hline
+%Week 10 & \begin{minipage}{.85\textwidth}
+%%\begin{itemize} \itemsep-0.4em
+%	\vspace{1mm}
+%	Mar 25, Time series\\
+%	Mar 27,  Time series
+%	\vspace{1mm}
+%%\end{itemize}
+%\end{minipage} \\
+%\hline
+%Week 11 & \begin{minipage}{.85\textwidth}
+%%\begin{itemize} \itemsep-0.4em
+%	\vspace{1mm}
+%	Apr 01,  Simulation, Case Study \\
+%	{\color{blue} Apr 03, Review for Exam 2}
+%	\vspace{1mm}
+%%\end{itemize}
+%\end{minipage} \\
+%\hline
+%Week 12 & \begin{minipage}{.85\textwidth}
+%%\begin{itemize} \itemsep-0.4em
+%	\vspace{1mm}
+%	{\color{UTAustin} Apr 08, Exam 2}\\
+%	Apr 10, Decision making
+%	\vspace{1mm}
+%%\end{itemize}
+%\end{minipage} \\
+%\hline
+%Week 13 & \begin{minipage}{.85\textwidth}
+%%\begin{itemize} \itemsep-0.4em
+%	\vspace{1mm}
+%	Apr 15, Decision making\\
+%	Apr 17, Decision making
+%	\vspace{1mm}
+%%\end{itemize}
+%\end{minipage} \\
+%\hline
+%Week 14 & \begin{minipage}{.85\textwidth}
+%%\begin{itemize} \itemsep-0.4em
+%	\vspace{1mm}
+%	Apr 22, Bayes rule and naive Bayes classifier\\
+%	Apr 24, Simulation, Case Study
+%	\vspace{1mm}
+%%\end{itemize}
+%\end{minipage} \\
+%\hline
+%Week 15 & \begin{minipage}{.85\textwidth}
+%%\begin{itemize} \itemsep-0.4em
+%	\vspace{1mm}
+%	Apr 29, Simulation, Case Study\\
+%	{\color{blue} May 01, Review for Final Exam}
+%	\vspace{1mm}
+%%\end{itemize}
+%\end{minipage} \\
+%\hline
+%\end{tabular} 
+%\end{table}
+
+
+
+
+
+
+
+
+
+\end{document}
